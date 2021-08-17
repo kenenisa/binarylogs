@@ -1,0 +1,280 @@
+body {
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  background: rgba(110, 110, 110, 0);
+  width: 0.35rem;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(119, 119, 119, 0.603);
+  border-radius: 5px;
+}
+::-moz-scrollbar {
+  background: rgba(110, 110, 110, 0);
+  width: 0.45rem;
+}
+::-moz-scrollbar-thumb {
+  background: rgba(119, 119, 119, 0.603);
+  border-radius: 5px;
+}
+.total {
+  position: absolute;
+  top: 1.5rem;
+  left: 0;
+  width: 35%;
+  height: 4rem;
+  border-right: 1px solid #ddd;
+  padding:0.25rem 0.5rem;
+  box-sizing: border-box;
+}
+.total span {
+  font-size: 0.8rem;
+  color: gray;
+  font-weight: 500;
+}
+.total span i {
+  font-size: 0.7rem;
+  font-weight: 300;
+  font-style: normal;
+}
+.total.fake span {
+  background: rgba(221, 221, 221, 0.5);
+  color: rgba(221, 221, 221, 0);
+}
+.left.fake .name,
+.left.fake .des {
+  background: rgba(221, 221, 221, 0.5);
+}
+.left.fake .name {
+  width: 4rem !important;
+}
+.left.fake .text {
+  width: 6rem !important;
+}
+.left {
+  position: absolute;
+  top: 5.5rem;
+  left: 0;
+  width: 35%;
+  height: 100%;
+  display: inline-block;
+  border-right: 1px solid #ddd;
+}
+.right {
+  position: absolute;
+  top: 1.5rem;
+  left: 36%;
+  width: 65%;
+  height: 100%;
+  display: inline-block;
+}
+.left .person {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5rem;
+  border-top: 1px solid rgba(221, 221, 221, 0.486);
+  cursor: pointer;
+}
+.left .person:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+.left.fake .person {
+  cursor: default !important;
+}
+.left.fake .person:hover {
+  background: rgba(0, 0, 0, 0);
+}
+.left .person .indicator {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: green;
+  border-radius: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+.left .person .avatar {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.25rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background: rgba(221, 221, 221, 0.5);
+}
+.left .person .avatar img {
+  width: 100%;
+  height: auto;
+}
+.left .person .text {
+  position: absolute;
+  top: 0;
+  left: 4rem;
+  padding-left: 0.5rem;
+  width: calc(100% - 4rem);
+  height: 100%;
+  padding: 0.75rem 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.left .person .text .name {
+  position: relative;
+  top: 0;
+  min-height: 1rem;
+  min-width: 3rem;
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.left .person .text .des {
+  position: relative;
+  font-size: 0.8rem;
+  font-weight: 200;
+  color: gray;
+  min-height: 0.75rem;
+  min-width: 8rem;
+  width: 100%;
+}
+.right.fake .name,
+.right.fake .status,
+.right.fake .time,
+.right.fake .value {
+  min-height: 1rem;
+  width: 5rem;
+  margin: auto;
+  background: rgba(221, 221, 221, 0.5);
+}
+
+.right.fake .name {
+  height: 2rem;
+  width: 8rem;
+}
+.right .top {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 21.5rem;
+  border-bottom: 1px solid #ddd;
+}
+.right .top .avatar {
+  position: relative;
+  top: 1rem;
+  left: 0;
+  width: 15rem;
+  height: 15rem;
+  margin: auto;
+  background: blue;
+  border-radius: 50%;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: rgba(221, 221, 221, 0.5);
+}
+.right .top .avatar img {
+  width: 100%;
+  height: auto;
+}
+.right .top .text {
+  position: relative;
+  top: 1rem;
+  left: 0;
+  margin: auto;
+  text-align: center;
+  margin-top: 1rem;
+}
+.right .top .text .name {
+  position: relative;
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+
+.right .top .text .status {
+  position: relative;
+  font-size: 0.9rem;
+  font-weight: lighter;
+  color: red;
+}
+.right .top .text .status.online {
+  color: green;
+}
+.right .bottom {
+  position: relative;
+  padding: 0 2rem;
+}
+
+.right .bottom .stat {
+  position: relative;
+  width: 100%;
+  height: 1.5rem;
+  padding: 0.75rem 0;
+  display: flex;
+  border-bottom: 1px solid #ddd;
+}
+.right .bottom .stat .time {
+  position: relative;
+  width: 50%;
+  flex: 1;
+  color: gray;
+}
+.right .bottom .stat .value {
+  width: 50%;
+  flex: 1;
+  /* text-align: right; */
+}
+.log-list{
+  position: relative;
+  padding:0 2rem;
+  margin-bottom:3rem
+}
+.log-list .log{
+  position: relative;
+  padding:0.75rem 0;
+  border-bottom:1px solid #ddd;
+  color:gray;
+  font-size: 0.9rem;
+}
+h3{
+  margin-left:1rem
+}
+@media screen and (max-width:450px){
+  .right .bottom {
+    padding: 0 2rem;
+  }
+  .total{
+    position: relative;
+    top:0;
+    left:0;
+    width:100%;
+    height:2rem
+  }
+  .left{
+    position: relative;
+    top:0;
+    left:0;
+    width:100%;
+    height:auto;
+  }
+  .right{
+    position: relative;
+    top:0;
+    left:0;
+    width: 100%;
+    right:0;
+  }
+  .right .avatar{
+    width:10rem;
+    height: 10rem;
+  }
+}

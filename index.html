@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stats</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="con">
+      <!-- <h1>Loading...</h1> -->
+      <div class="total fake" id="top-total">
+        <span><i>total</i> 750h</span> . <span><i>today</i> 10h</span> .
+        <span><i>last week</i> 60h</span> .
+        <span><i>last month</i> 370h</span>
+        <!-- <div class="value">400h</div> -->
+      </div>
+      <div class="left fake" id="people">
+        <div class="person">
+          <div class="avatar"></div>
+          <div class="text">
+            <div class="name"></div>
+            <div class="des"></div>
+          </div>
+        </div>
+        <div class="person">
+          <div class="avatar"></div>
+          <div class="text">
+            <div class="name"></div>
+            <div class="des"></div>
+          </div>
+        </div>
+        <div class="person">
+          <div class="avatar"></div>
+          <div class="text">
+            <div class="name"></div>
+            <div class="des"></div>
+          </div>
+        </div>
+        <div class="person">
+          <div class="avatar"></div>
+          <div class="text">
+            <div class="name"></div>
+            <div class="des"></div>
+          </div>
+        </div>
+      </div>
+      <div class="right fake" id="person">
+        <div class="top">
+          <div class="avatar">
+            <!-- <img src="https://robohash.org/fasfdasd" alt="avatar" /> -->
+          </div>
+          <div class="text">
+            <div class="name"></div>
+            <div class="status online"></div>
+          </div>
+        </div>
+        <div class="bottom">
+          <div class="stat">
+            <span class="time"></span>
+            <span class="value" id="today"></span>
+          </div>
+          <div class="stat">
+            <span class="time"></span>
+            <span class="value" id="week"></span>
+          </div>
+          <div class="stat">
+            <span class="time"></span>
+            <span class="value" id="month"></span>
+          </div>
+          <div class="stat">
+            <span class="time"></span>
+            <span class="value" id="total"></span>
+          </div>
+        </div>
+    </div>
+    <script src="./Firebase/Firebase-app.js"></script>
+    <script src="./Firebase/Firebase-firestore.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyD2vuHGmmZSgm_JFtVrkF02lZLXBRV6DDg",
+        authDomain: "binarylogs-58777.firebaseapp.com",
+        projectId: "binarylogs-58777",
+        storageBucket: "binarylogs-58777.appspot.com",
+        messagingSenderId: "754835310530",
+        appId: "1:754835310530:web:5257792e15ddd4f2cff85b",
+      };
+      if (firebase.apps.length === 0) {
+        firebase.initializeApp(firebaseConfig);
+      }
+      const db = firebase.firestore();
+      const ref = db.collection("users");
+      function id(str) {
+        return document.getElementById(str);
+      }
+    </script>
+    <script src="./dayjs/dayjs.min.js"></script>
+    <script src="./dayjs/calendar.js">
+      console.log(calendar)
+    </script>
+    <script src="./parseTime.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
