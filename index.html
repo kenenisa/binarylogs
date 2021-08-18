@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stats</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="Material/Material-icon.css">
   </head>
   <body>
     <div id="con">
       <!-- <h1>Loading...</h1> -->
       <div class="total fake" id="top-total">
-        <span><i>total</i> 750h</span> . <span><i>today</i> 10h</span> .
-        <span><i>last week</i> 60h</span> .
+        <span><i>total</i> 750h</span> · <span><i>today</i> 10h</span> ·
+        <span><i>last week</i> 60h</span> ·
         <span><i>last month</i> 370h</span>
         <!-- <div class="value">400h</div> -->
       </div>
@@ -89,16 +90,27 @@
       if (firebase.apps.length === 0) {
         firebase.initializeApp(firebaseConfig);
       }
+      firebase.firestore().settings({
+        cacheSizeBytes: firebase.firestore.CACHE_SIZE_UNLIMITED
+      });
       const db = firebase.firestore();
+      firebase.firestore().enablePersistence()
+      .catch((err) => {
+          if (err.code == 'failed-precondition') {
+              console.error('Multiple tabs open, persistence can only be enabled in one tab at a a time')
+              // ...
+              console.error('The current browser does not support all of the features required to enable persistence')
+          } 
+      });
+      
+
       const ref = db.collection("users");
       function id(str) {
         return document.getElementById(str);
-      }
+      };
     </script>
     <script src="./dayjs/dayjs.min.js"></script>
-    <script src="./dayjs/calendar.js">
-      console.log(calendar)
-    </script>
+    <script src="./dayjs/calendar.js"></script>
     <script src="./parseTime.js"></script>
     <script src="./index.js"></script>
   </body>

@@ -26,7 +26,7 @@ body {
   width: 35%;
   height: 4rem;
   border-right: 1px solid #ddd;
-  padding:0.25rem 0.5rem;
+  padding: 0.25rem 0.5rem;
   box-sizing: border-box;
 }
 .total span {
@@ -61,6 +61,7 @@ body {
   height: 100%;
   display: inline-block;
   border-right: 1px solid #ddd;
+  box-sizing: border-box;
 }
 .right {
   position: absolute;
@@ -180,9 +181,48 @@ body {
   overflow: hidden;
   background: rgba(221, 221, 221, 0.5);
 }
+@keyframes anime {
+  0% {
+    position: absolute;
+    top: 6rem;
+    transform: rotateZ(-25deg) rotateY(-60deg);
+    opacity: 0;
+  }
+  /* 90%{
+    opacity: 1;
+  } */
+  100% {
+    position: absolute;
+    top: 0;
+    transform: rotateZ(0deg) rotateY(0deg);
+    opacity: 1;
+  }
+}
 .right .top .avatar img {
+  position: relative;
   width: 100%;
   height: auto;
+  transform-origin: 70% 100%;
+  opacity: 0;
+  animation: anime 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+@keyframes fly{
+  0%{
+    left:0rem;
+    opacity: 1; 
+  }
+  25%{
+    left:-5rem;
+    opacity: 0; 
+  }
+  50%{
+    left:5rem;
+    opacity: 0; 
+  }
+  100%{
+    left:0rem;
+    opacity: 1; 
+  }
 }
 .right .top .text {
   position: relative;
@@ -191,6 +231,7 @@ body {
   margin: auto;
   text-align: center;
   margin-top: 1rem;
+  animation: fly 500ms ease-in-out;
 }
 .right .top .text .name {
   position: relative;
@@ -209,11 +250,21 @@ body {
 .right .top .text .status.online {
   color: green;
 }
+@keyframes slide{
+  from{
+    top:10rem;
+    opacity: 0;
+  }
+  to{
+    top:0;
+    opacity: 1;
+  }
+}
 .right .bottom {
   position: relative;
-  padding: 0 2rem;
+  animation: slide 500ms ease-out;
+  padding: 0 1.5rem;
 }
-
 .right .bottom .stat {
   position: relative;
   width: 100%;
@@ -233,48 +284,51 @@ body {
   flex: 1;
   /* text-align: right; */
 }
-.log-list{
+.log-list {
   position: relative;
-  padding:0 2rem;
-  margin-bottom:3rem
+  padding: 0 1.5rem;
+  margin-bottom: 3rem;
+  animation: slide 500ms ease-out;
 }
-.log-list .log{
+.log-list .log {
   position: relative;
-  padding:0.75rem 0;
-  border-bottom:1px solid #ddd;
-  color:gray;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #ddd;
+  color: gray;
   font-size: 0.9rem;
 }
-h3{
-  margin-left:1rem
+h3 {
+  position:relative;
+  animation: slide 500ms ease-out;
+  margin-left: 1rem;
 }
-@media screen and (max-width:450px){
+@media screen and (max-width: 450px) {
   .right .bottom {
     padding: 0 2rem;
   }
-  .total{
+  .total {
     position: relative;
-    top:0;
-    left:0;
-    width:100%;
-    height:2rem
-  }
-  .left{
-    position: relative;
-    top:0;
-    left:0;
-    width:100%;
-    height:auto;
-  }
-  .right{
-    position: relative;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     width: 100%;
-    right:0;
+    height: 2rem;
   }
-  .right .avatar{
-    width:10rem;
+  .left {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
+  .right {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    right: 0;
+  }
+  .right .avatar {
+    width: 10rem;
     height: 10rem;
   }
 }
