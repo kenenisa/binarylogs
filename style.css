@@ -129,7 +129,7 @@ body {
   min-height: 1rem;
   min-width: 3rem;
   font-size: 1.2rem;
-  font-weight: 300;
+  font-weight: 500;
   margin-bottom: 0.5rem;
   text-transform: capitalize;
   white-space: nowrap;
@@ -140,7 +140,7 @@ body {
 .left .person .text .des {
   position: relative;
   font-size: 0.8rem;
-  font-weight: 200;
+  font-weight: 300;
   color: gray;
   min-height: 0.75rem;
   min-width: 8rem;
