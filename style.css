@@ -172,19 +172,30 @@ body {
   position: relative;
   top: 1rem;
   left: 0;
-  width: 15rem;
-  height: 15rem;
+  width: 11rem;
+  height: 11rem;
   margin: auto;
-  background: blue;
   border-radius: 50%;
   box-sizing: border-box;
-  overflow: hidden;
+  /* overflow: hidden; */
   background: rgba(221, 221, 221, 0.5);
+  /* background: blue; */
+}
+.right .top .avatar .anchor{
+  position:absolute;
+  height:14rem;
+  width:12.25rem;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  /* background:rgba(255, 0, 0, 0.123); */
+  border-radius:50%;
+  overflow: hidden;
 }
 @keyframes anime {
   0% {
     position: absolute;
-    top: 6rem;
+    bottom: -3rem;
     transform: rotateZ(-25deg) rotateY(-60deg);
     opacity: 0;
   }
@@ -193,14 +204,17 @@ body {
   } */
   100% {
     position: absolute;
-    top: 0;
+    bottom: 0rem;
     transform: rotateZ(0deg) rotateY(0deg);
     opacity: 1;
   }
 }
 .right .top .avatar img {
-  position: relative;
-  width: 100%;
+  position: absolute;
+  bottom:0rem;
+  left:-1.5rem;
+  /* top:0rem; */
+  width: 14.5rem;
   height: auto;
   transform-origin: 70% 100%;
   opacity: 0;

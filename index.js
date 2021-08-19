@@ -75,7 +75,9 @@ function openPerson(idd) {
             id('person').innerHTML = `
         <div class="top">
           <div class="avatar">
-            <img src="https://robohash.org/${person.name}" alt="avatar" />
+          <div class="anchor">
+          <img src="https://robohash.org/${person.name}" alt="avatar" />
+          </div>
           </div>
           <div class="text">
             <div class="name">${person.name}</div>
