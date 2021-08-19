@@ -168,7 +168,10 @@ ref.get().then((querySnapshot) => {
                     <span><i>last month</i> ${Math.floor(monthShare / hour)}h</span>`
             }
             people.sort((x, y) => {
-                return y.logData[0].from - x.logData[0].from;
+                if(y.logData[0] && x.logData[0]){
+                    return y.logData[0].from - x.logData[0].from;
+                }
+                return 0;
             })
             people.sort((x, y) => {
                 if (x.online) {
