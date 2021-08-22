@@ -114,9 +114,9 @@ function openPerson(idd) {
 
 }
 function odp(num) {
+    if (!num) return 0;
     const fl = Math.floor(num);
-
-    if (fl === num) return num;
+    if (fl === num || !num.toString().split('.')[1]) return num;
     const tbr = num.toString().split('.')[1].slice(0, 2);
     return Math.floor(num) + '.' + Math.round(Number(tbr[0] + '.' + tbr[1]));
 }
@@ -168,7 +168,7 @@ ref.get().then((querySnapshot) => {
                     <span><i>last month</i> ${Math.floor(monthShare / hour)}h</span>`
             }
             people.sort((x, y) => {
-                if(y.logData[0] && x.logData[0]){
+                if (y.logData[0] && x.logData[0]) {
                     return y.logData[0].from - x.logData[0].from;
                 }
                 return 0;
